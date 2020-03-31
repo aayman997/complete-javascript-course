@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { key, proxy } from '../config';
+import {key, proxy} from '../config';
 
 export default class Recipe {
     constructor(id) {
@@ -56,7 +56,7 @@ export default class Recipe {
                 // Ex. 4 1/2 cups, arrCount is [4, 1/2] --> eval("4+1/2") --> 4.5
                 // Ex. 4 cups, arrCount is [4]
                 const arrCount = arrIng.slice(0, unitIndex);
-                
+
                 let count;
                 if (arrCount.length === 1) {
                     count = eval(arrIng[0].replace('-', '+'));
@@ -76,14 +76,14 @@ export default class Recipe {
                     count: parseInt(arrIng[0], 10),
                     unit: '',
                     ingredient: arrIng.slice(1).join(' ')
-                }
+                };
             } else if (unitIndex === -1) {
                 // There is NO unit and NO number in 1st position
                 objIng = {
                     count: 1,
                     unit: '',
                     ingredient
-                }
+                };
             }
 
             return objIng;
@@ -91,7 +91,7 @@ export default class Recipe {
         this.ingredients = newIngredients;
     }
 
-    updateServings (type) {
+    updateServings(type) {
         // Servings
         const newServings = type === 'dec' ? this.servings - 1 : this.servings + 1;
 

@@ -6,7 +6,7 @@ import * as searchView from './views/searchView';
 import * as recipeView from './views/recipeView';
 import * as listView from './views/listView';
 import * as likesView from './views/likesView';
-import { elements, renderLoader, clearLoader } from './views/base';
+import {clearLoader, elements, renderLoader} from './views/base';
 
 /** Global state of the app
  * - Search object
@@ -16,7 +16,7 @@ import { elements, renderLoader, clearLoader } from './views/base';
  */
 const state = {};
 
-/** 
+/**
  * SEARCH CONTROLLER
  */
 const controlSearch = async () => {
@@ -35,7 +35,7 @@ const controlSearch = async () => {
         try {
             // 4) Search for recipes
             await state.search.getResults();
-    
+
             // 5) Render results on UI
             clearLoader();
             searchView.renderResults(state.search.result);
@@ -44,7 +44,7 @@ const controlSearch = async () => {
             clearLoader();
         }
     }
-}
+};
 
 elements.searchForm.addEventListener('submit', e => {
     e.preventDefault();
@@ -62,7 +62,7 @@ elements.searchResPages.addEventListener('click', e => {
 });
 
 
-/** 
+/**
  * RECIPE CONTROLLER
  */
 const controlRecipe = async () => {
@@ -88,7 +88,7 @@ const controlRecipe = async () => {
             // Calculate servings and time
             state.recipe.calcTime();
             state.recipe.calcServings();
-    
+
             // Render recipe
             clearLoader();
             recipeView.renderRecipe(
@@ -102,11 +102,11 @@ const controlRecipe = async () => {
         }
     }
 };
- 
+
 ['hashchange', 'load'].forEach(event => window.addEventListener(event, controlRecipe));
 
 
-/** 
+/**
  * LIST CONTROLLER
  */
 const controlList = () => {
@@ -118,7 +118,7 @@ const controlList = () => {
         const item = state.list.addItem(el.count, el.unit, el.ingredient);
         listView.renderItem(item);
     });
-}
+};
 
 // Handle delete and update list item events
 elements.shopping.addEventListener('click', e => {
@@ -132,7 +132,7 @@ elements.shopping.addEventListener('click', e => {
         // Delete from UI
         listView.deleteItem(id);
 
-    // Handle the count update
+        // Handle the count update
     } else if (e.target.matches('.shopping__count-value')) {
         const val = parseFloat(e.target.value, 10);
         state.list.updateCount(id, val);
@@ -140,7 +140,7 @@ elements.shopping.addEventListener('click', e => {
 });
 
 
-/** 
+/**
  * LIKE CONTROLLER
  */
 const controlLike = () => {
@@ -162,7 +162,7 @@ const controlLike = () => {
         // Add like to UI list
         likesView.renderLike(newLike);
 
-    // User HAS liked current recipe
+        // User HAS liked current recipe
     } else {
         // Remove like from the state
         state.likes.deleteLike(currentID);
@@ -179,7 +179,7 @@ const controlLike = () => {
 // Restore liked recipes on page load
 window.addEventListener('load', () => {
     state.likes = new Likes();
-    
+
     // Restore likes
     state.likes.readStorage();
 
