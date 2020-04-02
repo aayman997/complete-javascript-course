@@ -1,0 +1,57 @@
+GET https://www.thecocktaildb.com/api/json/v1/1/list.php?s=margarita&drinks=0&c=list &g=list
+Accept: */*
+Cache-Control: no-cache
+
+<> 2020-04-02T021848.200.json
+
+###
+
+GET https://www.thecocktaildb.com/api/json/v1/1/list.php?s=margarita&drinks=0&c=list
+Accept: */*
+Cache-Control: no-cache
+
+<> 2020-04-02T021836.200.json
+
+###
+
+GET https://www.thecocktaildb.com/api/json/v1/1/list.php?s=margarita&drinks=0&c=list
+Accept: */*
+Cache-Control: no-cache
+
+<> 2020-04-02T021824.200.json
+
+###
+
+GET https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita&drinks=0
+Accept: */*
+Cache-Control: no-cache
+
+<> 2020-04-02T021745.200.json
+
+###
+
+GET https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita
+Accept: */*
+Cache-Control: no-cache
+drinks: 0
+
+<> 2020-04-02T021642.200.json
+
+###
+
+GET https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita
+Accept: */*
+Cache-Control: no-cache
+
+<> 2020-04-02T021610.200.json
+
+###
+
+GET https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita
+Accept: */*
+Cache-Control: no-cache
+
+<> 2020-04-02T021556.200.json
+
+###
+
