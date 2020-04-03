@@ -1,3 +1,4 @@
+/*
 // BUDGET CONTROLLER
 var budgetController = (function () {
 
@@ -125,7 +126,7 @@ var budgetController = (function () {
 
         calculatePercentages: function () {
 
-            /*
+            /!*
              a=20
              b=10
              c=40
@@ -133,7 +134,7 @@ var budgetController = (function () {
              a=20/100=20%
              b=10/100=10%
              c=40/100=40%
-             */
+             *!/
 
             data.allItems.exp.forEach(function (cur) {
                 cur.calcPercentage(data.totals.inc);
@@ -188,14 +189,14 @@ var UIController = (function () {
 
     var formatNumber = function (num, type) {
         var numSplit, int, dec, type;
-        /*
+        /!*
          + or - before number
          exactly 2 decimal points
          comma separating the thousands
 
          2310.4567 -> + 2,310.46
          2000 -> + 2,000.00
-         */
+         *!/
 
         num = Math.abs(num);
         num = num.toFixed(2);
@@ -465,3 +466,4 @@ var controller = (function (budgetCtrl, UICtrl) {
 
 
 controller.init();
+*/
