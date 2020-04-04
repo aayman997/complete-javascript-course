@@ -103,10 +103,9 @@ const budgetController = (function () {
             });
         },
         getPercentages: function () {
-            let allPerc = data.allItems.exp.map(function (cur) {
+            return data.allItems.exp.map(function (cur) {
                 return cur.getPercentage();
             });
-            return allPerc;
         },
         getBudget: function () {
             return {
@@ -116,9 +115,9 @@ const budgetController = (function () {
                 percentage: data.percentage
             };
         },
-        testing: function () {
-            console.log(data);
-        }
+        /*  testing: function () {
+         console.log(data);
+         }*/
     };
 })();
 
@@ -217,7 +216,7 @@ const UIController = (function () {
             let fields, fieldsArray;
             fields = document.querySelectorAll(`${DOMStrings.inputDescription}, ${DOMStrings.inputValue}`);
             fieldsArray = Array.prototype.slice.call(fields);
-            fieldsArray.forEach(function (current, index, array) {
+            fieldsArray.forEach(function (current) {
                 current.value = ``;
             });
             fieldsArray[0].focus();
