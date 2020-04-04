@@ -19,7 +19,7 @@ body {
     font-family : Open Sans, sans-serif;
     font-size   : 16px;
     position    : relative;
-    height      : 100vh;
+    min-height  : 100vh;
     font-weight : 400;
 }
 
@@ -194,19 +194,19 @@ body {
 
 /***** LISTS *****/
 .container {
-    width  : 1000px;
+    width  : 90%;
     margin : 60px auto;
 }
 
 .income {
     float        : left;
-    width        : 475px;
+    width        : calc(50% - 25px);
     margin-right : 50px;
 }
 
 .expenses {
     float : left;
-    width : 475px;
+    width : calc(50% - 25px);
 }
 
 h2 {
