@@ -318,7 +318,7 @@ const controller = (function (budgetCtrl, UICtrl) {
     let ctrlDeleteItem = function (event) {
         let itemID, splitID, type, ID;
         itemID = event.target.parentNode.parentNode.parentNode.parentNode.id;
-        console.log(itemID);
+        // console.log(itemID);
         if ( itemID ) {
             //  inc-1
             splitID = itemID.split(`-`);
