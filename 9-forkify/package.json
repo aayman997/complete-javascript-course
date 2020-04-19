@@ -1,11 +1,22 @@
 {
-  "name": "forkify",
-  "version": "1.0.0",
-  "description": "forkify project",
-  "main": "index.js",
-  "scripts": {
+  "name"           : "forkify",
+  "version"        : "1.0.0",
+  "description"    : "forkify project",
+  "main"           : "index.js",
+  "scripts"        : {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Ahmed Ayman",
-  "license": "ISC"
+  "author"         : "Ahmed Ayman",
+  "license"        : "ISC",
+  "devDependencies": {
+    "@babel/core"      : "^7.9.0",
+    "@babel/preset-env": "^7.9.5",
+    "babel-loader"     : "^8.1.0",
+    "webpack"          : "^4.42.1"
+  },
+  "dependencies"   : {
+    "core-js"            : "^3.6.5",
+    "jquery"             : "^3.5.0",
+    "regenerator-runtime": "^0.13.5"
+  }
 }
