@@ -13,7 +13,8 @@ const state = {};
 //	Search Controller
 const controlSearch = async () => {
 	//	1)	Get The Query From The View
-	const query = searchView.getInput();	//TODO
+	const query = searchView.getInput();
+	// const query = 'pizza';
 	if (query) {
 		//	2)	New Search Object And Add The State
 		state.search = new Search(query);
@@ -59,8 +60,10 @@ const controlRecipe = async () => {
 		//	Create New Recipe
 		state.recipe = new Recipe(id);
 		try {
-			//	Get Recipe Data
+			//	Get Recipe Data And Parse Ingredients
 			await state.recipe.getRecipe().then();
+			console.log(state.recipe.ingredients);
+			state.recipe.parseIngredients();
 			//	Calculate Servings And Time
 			state.recipe.calcTime();
 			state.recipe.calcServings();

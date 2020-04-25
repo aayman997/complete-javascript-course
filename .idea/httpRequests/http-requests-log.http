@@ -1,3 +1,77 @@
+GET https://forkify-api.herokuapp.com/api/search/?q=pizza
+
+<> 2020-04-23T083457.200.json
+
+###
+
+GET http://httpbin.org/ip
+
+<> 2020-04-23T083456.200.json
+
+###
+
+GET https://forkify-api.herokuapp.com/api/search/?q=pizza
+
+<> 2020-04-23T083443.200.json
+
+###
+
+GET https://forkify-api.herokuapp.com/api/search/?q=pizza
+
+<> 2020-04-23T082448.200.json
+
+###
+
+GET https://forkify-api.herokuapp.com/api/search/?q=pizza
+
+<> 2020-04-21T052912.200.json
+
+###
+
+GET https://forkify-api.herokuapp.com/api/get/?rId=47746
+
+<> 2020-04-21T052813.200.json
+
+###
+
+GET https://forkify-api.herokuapp.com/api/search/?q=pizza
+
+<> 2020-04-21T052750.200.json
+
+###
+
+GET https://forkify-api.herokuapp.com/api/search/?q=pizza
+
+<> 2020-04-21T052727.200.json
+
+###
+
+GET https://forkify-api.herokuapp.com/api/search/?search=pizza
+
+<> 2020-04-21T052713.400.json
+
+###
+
+GET https://forkify-api.herokuapp.com/api/?search=pizza
+
+<> 2020-04-21T052654.404.json
+
+###
+
+GET https://forkify-api.herokuapp.com/api/get?search=pizza
+
+<> 2020-04-21T052549.400.json
+
+###
+
+GET https://forkify-api.herokuapp.com/api/get?query=san
+search: pizza
+Cache-Control: no-cache
+
+<> 2020-04-21T052531.400.json
+
+###
+
 GET https://www.metaweather.com/api/location/2487956/?query=san
 Accept: */*
 Cache-Control: no-cache
