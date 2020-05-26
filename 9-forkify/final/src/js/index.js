@@ -14,7 +14,7 @@ import {clearLoader, elements, renderLoader} from './views/base';
  * - Shopping list object
  * - Liked recipes
  */
-const state = {};
+let state = {};
 
 /**
  * SEARCH CONTROLLER
