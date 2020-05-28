@@ -14,6 +14,7 @@ export const highLightSelected = id => {
 	resultsArr.forEach(el => {
 		el.classList.remove('results__link--active');
 	});
+	// document.querySelector(`.results__link[href*="#${id}"]`).classList.add('results__link--active');
 	document.querySelector(`a[href*="#${id}"]`).classList.add('results__link--active');
 };
 /*
@@ -24,7 +25,7 @@ export const highLightSelected = id => {
 *	Acc:	15 / acc + cur.length = 18 / newTitle = ['Pasta', 'With', 'Tomato']
 *	Acc:	18 / acc + cur.length = 24 / newTitle = ['Pasta', 'With', 'Tomato']
 */
-const limitRecipeTitle = (title, limit = 20) => {
+export const limitRecipeTitle = (title, limit = 20) => {
 	const newTitle = [];
 	if (title.length > limit) {
 		title.split(' ').reduce((acc, cur) => {

@@ -1,34 +1,34 @@
 {
-  "name": "Forkify",
-  "version": "1.0.0",
-  "description": "Forkify Food Recipe Application",
-  "main": "index.js",
-  "author": "Ahmed Ayman <ahmed1997164@gmail.com>",
-  "license": "ISC",
-  "repository": {
+  "name"           : "forkify",
+  "version"        : "1.0.0",
+  "description"    : "Forkify Food Recipe Application",
+  "main"           : "index.js",
+  "author"         : "Ahmed Ayman <ahmed1997164@gmail.com>",
+  "license"        : "ISC",
+  "repository"     : {
     "type": "git",
-    "url": "https://github.com/aayman997/complete-javascript-course.git"
+    "url" : "https://github.com/aayman997/complete-javascript-course.git"
   },
-  "scripts": {
-    "dev": "webpack --mode development",
+  "scripts"        : {
+    "dev"  : "webpack --mode development",
     "build": "webpack --mode production",
     "start": "webpack-dev-server --mode development --open Chrome"
   },
   "devDependencies": {
-    "@babel/core": "^7.9.0",
-    "@babel/preset-env": "^7.9.5",
-    "babel-loader": "^8.1.0",
+    "@babel/core"        : "^7.9.0",
+    "@babel/preset-env"  : "^7.9.5",
+    "babel-loader"       : "^8.1.0",
     "html-webpack-plugin": "^4.2.0",
-    "webpack": "^4.42.1",
-    "webpack-cli": "^3.3.11",
-    "webpack-dev-server": "^3.10.3"
+    "webpack"            : "^4.42.1",
+    "webpack-cli"        : "^3.3.11",
+    "webpack-dev-server" : "^3.10.3"
   },
-  "dependencies": {
-    "axios": "^0.19.2",
-    "core-js": "^3.6.5",
-    "fractional": "^1.0.0",
-    "jquery": "^3.5.0",
+  "dependencies"   : {
+    "axios"              : "^0.19.2",
+    "core-js"            : "^3.6.5",
+    "fractional"         : "^1.0.0",
+    "jquery"             : "^3.5.0",
     "regenerator-runtime": "^0.13.5",
-    "uniqid": "^5.2.0"
+    "uniqid"             : "^5.2.0"
   }
 }

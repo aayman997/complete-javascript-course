@@ -2,6 +2,7 @@ import Search from './models/Search';
 import * as searchView from './views/searchView';
 import * as recipeView from './views/recipeView';
 import * as listView from './views/listView';
+import * as likesView from './views/likesView';
 import {clearLoader, elements, renderLoader} from './views/base';
 import Recipe from './models/Recipe';
 import List from './models/List';
@@ -14,7 +15,6 @@ import Likes from './models/Likes';
 * -	Liked Recipes
 */
 const state = {};
-window.state = state;
 
 //	Search Controller
 const controlSearch = async () => {
@@ -58,7 +58,6 @@ elements.searchResPages.addEventListener('click', e => {
 const controlRecipe = async () => {
 	//	Get ID From URL
 	const id = window.location.hash.replace('#', '');
-	console.log(id);
 	if (id) {
 		//Prepare UI For Changes
 		recipeView.clearRecipe();
@@ -76,7 +75,10 @@ const controlRecipe = async () => {
 			state.recipe.calcServings();
 			//	Render Recipe
 			clearLoader();
-			recipeView.renderRecipe(state.recipe);
+			recipeView.renderRecipe(
+				state.recipe,
+				state.likes.isLiked(id)
+			);
 		} catch (err) {
 			alert(`Error Processing Recipe!  😥😞😭🙊`);
 		}
@@ -126,20 +128,32 @@ const controlLike = () => {
 			state.recipe.img
 		);
 		//	Toggle The Like Button
-
+		likesView.toggleLikeBtn(true);
 		//	Add Like To The UI List
-		console.log(state.likes);
+		likesView.renderLike(newLike);
 
 		//	User Has Liked The Current Recipe
 	} else {
 		//	Remove Like To The State
 		state.likes.deleteLike(currentID);
 		//	Toggle The Like Button
-
+		likesView.toggleLikeBtn(false);
 		//	Remove Like From The UI List
-		console.log(state.likes);
+		likesView.deleteLike(currentID);
 	}
+	likesView.toggleLikeMenu(state.likes.getNumLikes());
 };
+
+//	Restore Liked Recipe On Page Load
+window.addEventListener('load', () => {
+	state.likes = new Likes();
+	//	Restore Likes
+	state.likes.readStorage();
+	//	Toggle Like Menu Button
+	likesView.toggleLikeMenu(state.likes.getNumLikes());
+	//	Render The Existing Likes
+	state.likes.likes.forEach(like => likesView.renderLike(like));
+});
 
 //	Handling Recipe Button Clicks
 elements.recipe.addEventListener('click', e => {
@@ -161,4 +175,3 @@ elements.recipe.addEventListener('click', e => {
 		controlLike();
 	}
 });
-window.l = new List();
